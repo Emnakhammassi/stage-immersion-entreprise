@@ -1,0 +1,35 @@
+<!--<app-navbar></app-navbar>-->
+
+<div class="history-container background">
+  <!-- Banner Section -->
+  <div class="banner-container" [ngStyle]="{'background-image': 'url(' + currentMovie.posterPath + ')'}">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <h2>You Watched Lately</h2>
+      <h3  style="color: red">{{ currentMovie.title }}</h3>
+    </div>
+  </div>
+
+  <div class="background">
+
+    <!-- History List Section -->
+    <div class="history-list-container ">
+      <div class="history-list ">
+        <div class="history-item" *ngFor="let movie of movies">
+          <div class="history-item-image">
+            <img [src]="'https://image.tmdb.org/t/p/original' + movie.posterPath" alt="{{ movie.title }}"/>
+          </div>
+          <div class="history-item-details">
+            <h3 class="history-item-title"  style="color: red">{{ movie.title }}</h3>
+            <p class="history-item-date">Watched on: {{ movie.watchedAt | date: 'short' }}</p>
+            <p class="history-item-overview">{{ movie.overview }}</p>
+            <p class="history-item-release">Release Date: {{ movie.releaseDate | date: 'shortDate' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

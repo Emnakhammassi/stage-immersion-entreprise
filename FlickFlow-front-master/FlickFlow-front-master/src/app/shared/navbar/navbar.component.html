@@ -1,0 +1,43 @@
+<!--<div  id="top ">-->
+<!--<div class="container-fluid">-->
+    <nav class="navbar navbar-expand sticky-top" data-bs-theme="dark" [class.scrolled]="isScrolled"  >
+      <div class="container d-flex justify-content-center align-items-center  ">
+        <a class="navbar-brand" href="#">
+          <img src="../../../assets/logo.png" priority alt="logo-netflix" width="130" height="23.45" class="d-inline-block align-text-top" class="d-inline-block align-text-top">
+        </a>
+        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+          <div>
+            <ul class="navbar-nav">
+              <li> <a class="nav-link" routerLink="home/" routerLinkActive="active">Home</a></li>
+              <li><a class="nav-link" routerLink="home/" routerLinkActive="active">News & Popular</a></li>
+              <li><a class="nav-link" routerLink="/mylist" routerLinkActive="active">My List</a></li>
+              <li><a class="nav-link" routerLink="home/" routerLinkActive="active">My Profile</a></li>
+            </ul>
+          </div>
+          <div>
+
+            <li>
+            <form class="d-flex search input-group" role="search">
+              <input [ngModel]="searchTerm" (ngModelChange)="onSearch($event)" name="search"
+                     class="form-control search-input"
+                     type="search"
+                     placeholder="Type to search" aria-label="Search">
+              <span class="input-group-text search-icon">
+        <fa-icon icon="search"></fa-icon>
+          </span>
+            </form>
+            </li>
+          </div>
+          <div>
+<!--            <ul class="navbar-nav">-->
+<!--              <li class="nav-item">-->
+                <!--            <a class="nav-link" routerLink="home/">Log out</a>-->
+                <button class="button" (click)="onLogout()">Logout</button>
+<!--              </li>-->
+<!--            </ul>-->
+          </div>
+        </div>
+      </div>
+    </nav>
+<!--  </div>-->
+<!--</div>-->

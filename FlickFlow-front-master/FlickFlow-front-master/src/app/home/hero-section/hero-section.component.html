@@ -1,0 +1,37 @@
+@if (trendMovie) {
+  <section class="hero">
+<!--           [style.background-image]="'url(' + tmdbService.getImageURL(trendMovie.poster_path!, 'original') + ')'"  >-->
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-subtitle">FlickFlow</p>
+      <h1 class="h1 hero-title">
+        Unlimited <strong>Moviemodel</strong>, TVs Shows, & More.
+      </h1>
+      <div class="meta-wrapper">
+        <div class="badge-wrapper">
+          <div class="badge badge-fill">PG 18</div>
+          <div class="badge badge-outline">HD</div>
+        </div>
+        <div class="ganre-wrapper">
+          <a href="#">Romance,</a>
+          <a href="#">Drama</a>
+        </div>
+        <div class="date-time">
+          <div>
+            <fa-icon icon="calendar-outline"></fa-icon>
+            <time datetime="2022">2022</time>
+          </div>
+          <div>
+            <fa-icon icon="time-outline"></fa-icon>
+            <time datetime="PT128M">128 min</time>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary">
+        <fa-icon icon="play"></fa-icon>
+        <span>Watch now</span>
+      </button>
+    </div>
+  </div>
+</section>
+}

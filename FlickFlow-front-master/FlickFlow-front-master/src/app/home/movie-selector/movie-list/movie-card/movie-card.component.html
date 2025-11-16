@@ -1,0 +1,30 @@
+@if (movie) {
+<!--  <div class="me-2 movie" (click)="tmdbService.openMoreInfos(movie.id)"-->
+<!--       [style.background-image]="'url(' + this.tmdbService.getImageURL(movie.poster_path, 'w200') +')'">-->
+<!--    <div class="placeholder-poster" (click)="goToMovieDetails(movie.id)"></div>-->
+<!--  </div>-->
+
+
+  <div class="movie-card" (click)="goToMovieDetails()">
+    <figure class="poster-box card-banner">
+      <img [src]="getImageURL(movie.poster_path)" alt="{{ movie.title }}" class="img-cover" loading="lazy">
+    </figure>
+    <h4 class="title">{{ movie.title }}</h4>
+    <div class="meta-list">
+      <div class="meta-item">
+        <span class="span" style="color: gold">★</span> <!-- Unicode star -->
+        <span class="span">{{ movie.vote_average.toFixed(1) }}</span>
+      </div>
+      <div class="card-badge">{{ movie.release_date | date: 'yyyy' }}</div>
+    </div>
+  </div>
+
+<!--  <div class="me-2 movie" (click)="goToMovieDetails()"-->
+<!--           [style.background-image]="'url(' + this.tmdbService.getImageURL(movie.poster_path, 'w200') +')'">-->
+<!--    </div>-->
+<!--      <div class="placeholder-poster" > </div>-->
+
+<!--  <div class="movie-title">{{ movie.title }}</div>-->
+<!--  </div>-->
+
+}

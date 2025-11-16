@@ -1,0 +1,16 @@
+<section class="banner-splash ">
+  <div class="contain-fluid">
+    <div class="splash splash-Light slide" data-bs-ride="carousel">
+      <div class="splash-recommendation">
+        <div class="splash-item" *ngIf="splashResult" data-bs-interval="2500">
+          <img src="https://image.tmdb.org/t/p/original/{{ splashResult.backdropPath }}" class="d-block w-100"
+               alt="{{ splashResult.original_title }}">
+          <div class="splash-caption d-none d-md-block">
+            <h2><a   [routerLink]="['/movie', splashResult.tmbdId]">{{ splashResult.movieName }}</a></h2>
+            <p>{{ splashResult.overview }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

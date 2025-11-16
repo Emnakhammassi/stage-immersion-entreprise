@@ -1,0 +1,20 @@
+<div class="dark-background">
+  <!-- Banner Section -->
+  <div class="search-banner" style="background-image: url('assets/img.png');">
+    <h1 >Explore Movies</h1>
+
+  </div>
+
+  <!-- Movie Cards Section -->
+  <div class="movie-grid">
+    <!-- Iterate through movies -->
+    <div class="movie-card-wrapper" *ngFor="let movie of movies" (click)="goToMovieDetails(movie.id)">
+      <div class="movie-card">
+        <img [src]="'https://image.tmdb.org/t/p/w300/' + movie.poster_path" alt="{{ movie.title }}" />
+        <div class="movie-card-info">
+          <h4 class="movie-card-title">{{ movie.title }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+.rating{
+  font-size: 1.3rem;
+}
+
+igc-rating::part(symbols) {
+  --symbol-size: 1.8rem;
+}

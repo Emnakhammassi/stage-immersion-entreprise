@@ -1,0 +1,4 @@
+<div class="rating">
+  <h3>Rate this movie</h3>
+  <igc-rating class="rating-value"  [value]="ratingValue" min="1" max="5" step=".5" size="large" hover-preview (igcChange)="ratingChanged($event)"></igc-rating>
+</div>

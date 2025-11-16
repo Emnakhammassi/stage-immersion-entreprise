@@ -1,0 +1,7 @@
+/* movies-splash.component.css */
+.splash-item img {
+  width: 100%; /* or specify a max-width */
+  height: auto; /* maintain aspect ratio */
+  object-fit: cover; /* cover the container without distortion */
+
+}

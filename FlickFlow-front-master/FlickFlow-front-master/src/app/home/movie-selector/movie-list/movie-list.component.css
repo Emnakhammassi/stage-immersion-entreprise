@@ -1,0 +1,13 @@
+.container-movies {
+  height: 400px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: grid;
+  gap: 10px;
+
+}
+
+.container-movies::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+}

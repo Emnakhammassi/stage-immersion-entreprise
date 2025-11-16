@@ -1,0 +1,29 @@
+<div id="Login">
+  <div class="opactity_controller">
+    <header>
+      <img src="../../../assets/logo.png" alt="logo" />
+    </header>
+
+    <div class="content">
+      <div>
+        <h1>Sign in</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="email" class="label-white" >Email</label>
+      <input type="email" formControlName="email" id="email" name="email" placeholder="test@atheros.com">
+      <label for="password" class="label-white" >Password</label>
+      <input type="password" formControlName="password" id="password" name="password" placeholder="******">
+      <button type="submit" class="btn btn-signin">Sign In</button>
+    </form>
+    <p class="label-white" >Don't have an account? <a routerLink="/signup">Sign Up Now</a></p>
+
+  </div>
+<!--  <div class="login-right">-->
+<!--    <div class="login-info">-->
+<!--      <h3>Why should I login?</h3>-->
+<!--      <p>By logging in, you can access your personal dashboard, where you can manage your account, view your profile, and much more.</p>-->
+<!--      <img src="#" alt="Dashboard example">-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
+</div>
+</div>

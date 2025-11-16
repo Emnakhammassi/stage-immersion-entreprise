@@ -1,0 +1,412 @@
+
+div#Login {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../../../assets/login-background.jpg");
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+
+  @media (max-width: 425px) {
+    background-image: none;
+    background-color: #fff;
+    border-radius: 35px;
+  }
+
+  > div.opacity_controller {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    backdrop-filter: blur(2px); /* Adjust the blur intensity as needed */
+    -webkit-backdrop-filter: blur(1px); /* For Safari */
+    > header {
+      padding: 24px 5%;
+      width: 100%;
+
+      > img {
+        width: 167px;
+
+        @media (max-width: 360px) {
+          width: 75px;
+        }
+      }
+    }
+
+
+    div.content {
+      /*display: flex;*/
+      /*flex-direction: column;*/
+      /*margin-bottom: 70px;*/
+      /*align-items: center; !* Keep it centered *!*/
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 70px;
+      align-items: center; /* Keep it centered */
+      /*padding-left: 100px; !* Add padding to the left *!*/
+
+      > div {
+        background-color: rgba(0, 0, 0, 0.68);
+        backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
+        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        border-radius: 35px;
+        padding: 64px;
+        min-height: 450px;
+        min-width: 400px;
+        /*max-width: 90%;*/
+        max-height: 80vh; /* Ensure form content doesn't exceed the viewport */
+        overflow-y: auto; /* Enable scrolling within the form */
+        scrollbar-width: thin;
+        scrollbar-color:  transparent transparent; /* Firefox */
+
+        &::-webkit-scrollbar {
+          width: 1px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: transparent;
+          border-radius: 4px;
+
+        }
+
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+
+
+        @media (max-width: 425px) {
+          background-color: transparent;
+          min-height: 0;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          padding: 0 5%;
+          width: 100%;
+        }
+
+
+        > h1 {
+          color: #fff;
+          margin-bottom: 28px;
+
+          @media (max-width: 425px) {
+            text-align: left;
+            font-size: 32px;
+          }
+        }
+
+        > form {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-bottom: 48px;
+
+
+          > input {
+            font-size: 16px;
+            margin-bottom: 16px;
+            background-color: var(--dark-gray);
+            color: #fff;
+            border-radius: 50px;
+
+            &::placeholder {
+              color: var(--text-gray);
+            }
+          }
+
+          > button {
+            background-color: var(--primary);
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            border-radius: 40px;
+          }
+
+          > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            > label {
+              display: flex;
+              align-items: center;
+              color: #fff;
+            }
+
+            > label > input {
+              margin-top: 1px;
+              margin-right: 4px;
+            }
+
+            > label > span {
+              font-size: 13px;
+            }
+
+            > a {
+              color: #fff;
+              text-decoration: none;
+              font-size: 13px;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        > button {
+          padding: 0;
+          background-color: transparent;
+          color: #737373;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          font-size: 13px;
+          margin-bottom: 16px;
+
+          > img {
+            height: 20px;
+            margin-right: 8px;
+          }
+        }
+
+        > h6 {
+          color: #737373;
+          font-size: 16px;
+          margin-bottom: 16px;
+          font-weight: 400;
+
+          > span {
+            color: #fff;
+          }
+        }
+
+        > span {
+          color: var(--text-gray);
+          font-size: 13px;
+
+          > a {
+            color: red;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    > footer {
+      width: 100%;
+      padding: 32px 20%;
+      background-color: rgba(0, 0, 0, 0.75);
+
+      @media (max-width: 425px) {
+        padding: 32px 5%;
+        border-top: 1px solid #757575;
+      }
+
+      > p {
+        color: #757575;
+        margin-bottom: 30px;
+
+        > a {
+          text-decoration: none;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      > ul {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-right: 0 !important;
+        }
+
+        @media (max-width: 425px) {
+          flex-wrap: wrap;
+        }
+
+        > li {
+          color: #757575;
+          font-size: 13px;
+          margin-right: 128px;
+
+          @media (max-width: 425px) {
+            margin-right: 0;
+            padding: 0 16px 16px 0;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      > div {
+        position: relative;
+        margin-bottom: 30px;
+
+        @media (max-width: 425px) {
+          margin-bottom: 0;
+        }
+
+        > img {
+          width: 18px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 16px;
+        }
+
+        select {
+          background-color: #000;
+          padding: 12px 26px 12px 50px;
+          border-radius: 4px;
+          border: 1px solid #75757599;
+          color: #757575;
+
+          &:focus {
+            border: 2px solid #fff;
+            padding: 11px 25px 11px 49px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  div#Login {
+    > div.opacity_controller {
+      > header {
+        > img {
+        }
+      }
+    }
+  }
+}
+
+.label-white {
+  color: rgb(255, 255, 255);
+}
+/* General Preferences Container */
+.preference {
+  max-width: 350px;
+  margin: 0 auto; /* Center the preference container */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px; /* Space between boxes */
+}
+
+/* Checkbox Styles */
+.checkbox-wrapper-16 *,
+.checkbox-wrapper-16 *:after,
+.checkbox-wrapper-16 *:before {
+  box-sizing: border-box;
+}
+
+.checkbox-wrapper-16 .checkbox-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile {
+  border-color: red;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: red;
+}
+
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: red;
+  border-color: red;
+}
+
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-label {
+  color: red;
+  font-weight: bold;
+}
+
+.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile {
+  border-color: red;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px red;
+}
+
+.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-wrapper-16 .checkbox-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  min-height: 40px;
+  border-radius: 0.5rem;
+  border: 2px solid red;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+}
+
+.checkbox-wrapper-16 .checkbox-tile:before {
+  /*content: "";*/
+  position: absolute;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid black;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.checkbox-wrapper-16 .checkbox-tile:hover {
+  border-color: red;
+}
+
+.checkbox-wrapper-16 .checkbox-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-wrapper-16 .checkbox-label {
+  color: black;
+  transition: 0.375s ease;
+  text-align: center;
+  font-size: 0.875rem;
+}

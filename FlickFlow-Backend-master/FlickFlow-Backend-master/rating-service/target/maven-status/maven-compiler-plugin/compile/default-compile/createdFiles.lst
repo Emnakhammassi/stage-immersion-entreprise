@@ -1,0 +1,9 @@
+com\rating\rating\config\AppConfig.class
+com\rating\rating\repository\RatingRepository.class
+com\rating\rating\service\ratingService.class
+com\rating\rating\entity\Rating.class
+com\rating\rating\entity\Rating$RatingBuilder.class
+com\rating\rating\controller\ratingController.class
+com\rating\rating\dto\RatingDto.class
+com\rating\rating\RatingApplication.class
+com\rating\rating\config\AppConfig$1.class

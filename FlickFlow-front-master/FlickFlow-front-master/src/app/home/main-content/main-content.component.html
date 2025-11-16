@@ -1,0 +1,23 @@
+@if (trendMovie) {
+  <div class="main" [style.background-image]="'url(' + tmdbService.getImageURL(trendMovie.poster_path!, 'original') + ')'" >
+    <div class="banner-overlay"></div>
+    <div class="content">
+      <h1>{{ trendMovie.title }}</h1>
+      <div class="meta d-flex align-items-center">
+        <span class="badge release-year-badge">{{ trendMovie.release_date | date: 'yyyy' }}</span>
+        <span class="badge rating-badge">{{ trendMovie.vote_average.toFixed(1) }}</span>
+      </div>
+<!--      <p class="genre">{{ trendMovie.genre_ids | genre }}</p>-->
+      <p class="overview">{{ trendMovie.overview | slice: 0:300 }}...</p>
+      <div class="buttons mt-3">
+        <a class="btn watch-now-btn">
+        <span class="icon-container">
+          <fa-icon class="play-icon" icon="play"></fa-icon>
+        </span>
+          Watch Now
+        </a>
+      </div>
+
+    </div>
+  </div>
+}

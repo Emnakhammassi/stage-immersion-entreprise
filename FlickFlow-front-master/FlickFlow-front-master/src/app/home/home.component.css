@@ -1,0 +1,39 @@
+.dark-background {
+  background-color: #0a0000;
+}
+/* Styles for movie posters */
+.rowposter {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.rowposter::-webkit-scrollbar {
+  display: none;
+}
+
+.rowimg {
+  max-height: 100px;
+  object-fit: contain;
+  width: 100%;
+  box-sizing: content-box;
+  transition: transform 450ms;
+  margin-right: 7px;
+  border-radius: 5px;
+  border: 1px solid #797979;
+}
+
+.rowimg:hover {
+  transform: scale(1.09);
+  cursor: pointer;
+}
+
+.largeposter {
+  max-height: 300px;
+}
+/* home.component.css */
+.rowimg {
+  width: 100%; /* or specify a max-width */
+  height: auto; /* maintain aspect ratio */
+  object-fit: cover; /* cover the container without distortion */
+}

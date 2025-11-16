@@ -1,0 +1,143 @@
+<div >
+<!--  <app-navbar></app-navbar>-->
+
+  <div class="movie-details-page">
+    <!-- Banner Section -->
+    <div class="main w-100 m-0 p-0 d-flex justify-content-start align-items-center ">
+      <div class="image-wrapper" *ngIf="getMovieDetailResult?.backdropPath">
+        <div class="gradient-overlay"></div>
+        <img
+          class="backdrop-img"
+          [@backdropToVideo]="animationState"
+          [src]="'https://image.tmdb.org/t/p/original/' + getMovieDetailResult?.backdropPath"
+          alt="Movie Poster">
+        <div class="title-overview-container">
+          <div class="poster-and-text">
+            <div class="poster-wrapper" *ngIf="getMovieDetailResult?.posterPath">
+              <img
+                class="poster-img"
+                [@backdropToVideo]="animationState"
+                [src]="'https://image.tmdb.org/t/p/original/' + getMovieDetailResult?.posterPath"
+                alt="Movie Poster"
+              >
+            </div>
+            <div class="text-content">
+              <div class="title-date">
+                <h1>{{ getMovieDetailResult?.originalTitle || 'Title not available' }}</h1>
+                <h2 *ngIf="getMovieDetailResult?.releaseDate">({{ getMovieDetailResult?.releaseDate | date:'yyyy' }})</h2>
+              </div>
+              <div class="date-genre">
+                <h2 *ngIf="getMovieDetailResult?.releaseDate">{{ getMovieDetailResult?.releaseDate | date:'yyyy/MM/dd' }}</h2>
+                <h2 class="genres">
+                  <ng-container *ngFor="let genre of getMovieDetailResult?.genres; let i = index; let last = last">
+                    {{ genre.name }}
+                    <ng-container *ngIf="!last">, </ng-container>
+                  </ng-container>
+                </h2>
+              </div>
+              <!-- Add new container here -->
+              <div class="progress-and-score-container">
+                <div class="progress-container">
+                  <div class="percent-lower-circle">
+                    <div class="circular-progress">
+                      <svg class="circle" viewBox="0 0 100 100">
+                        <circle class="circle-background"
+                                cx="50" cy="50" r="45"
+                                [style.stroke]="circleBackgroundColor"></circle>
+                        <circle class="circle-progress"
+                                cx="50" cy="50" r="45"
+                                [attr.stroke-dasharray]="circleDashArray"
+                                [attr.stroke-dashoffset]="circleDashOffset"
+                                [style.stroke]="circleColor"></circle>
+                      </svg>
+                      <div class="progress-text">{{ currentValue }}%</div>
+                    </div>
+                  </div>
+                  <h2 class="user-score">User <br> Score</h2>
+                </div>
+              </div>
+
+
+              <p>{{ getMovieDetailResult?.overview || 'Overview not available' }}</p>
+              <div class="rating-container">
+                <app-rating></app-rating>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div>
+      <div class="video-container" *ngIf="videoUrl">
+
+        <div class="video-wrapper">
+          <iframe
+            id="player_iframe"
+            #youtubePlayer
+            class="embed-responsive-item"
+            [@backdropToVideo]="animationState"
+            [src]="videoUrl"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media;"
+            allowfullscreen
+            style="pointer-events: none;">
+          </iframe>
+        </div>
+
+        <div [@backdropToVideo]="animationState" class="toggle-sound" [ngClass]="{'animate': animate}" (click)="toggleMute()">
+          <div class="sound" [ngClass]="{'sound-mute': isMuted}">
+            <div class="sound--icon">
+              <i class="fa fa-volume-off" *ngIf="!isMuted"></i>
+              <i class="fa fa-volume-off sound--icon-mute" *ngIf="isMuted"></i>
+            </div>
+            <div class="sound--wave sound--wave_one"></div>
+            <div class="sound--wave sound--wave_two"></div>
+            <div class="sound--wave sound--wave_three"></div>
+          </div>
+        </div>
+        <div class="cast-container mt-12 p-4">
+          <h2 class="text-white">Top Cast</h2>
+          <div class="castrow">
+            <ng-container *ngIf="displayedCast && displayedCast.length > 0">
+              <div class="castelement" *ngFor="let member of displayedCast">
+                <img
+                  class="castimg"
+                  *ngIf="member.profilePath"
+                  [src]="'https://image.tmdb.org/t/p/w500' + member.profilePath"
+                  alt="{{ member.name }}"
+                />
+                <div class="cast-name">
+                  {{ member.name }} <br />
+                  <span>as {{ member.character }}</span>
+                </div>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="displayedCast && displayedCast.length === 0">
+              <p>No cast information available.</p>
+            </ng-container>
+          </div>
+        </div>
+        <div class="stream-container" *ngIf="movieStreamHtml" >
+          <h3 style="color: white"  (click)="onStream()">Streaming</h3>
+          <div class="movie_stream" [innerHtml]="movieStreamHtml"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="movie-recomendations ">
+      <h3>You may also like</h3>
+      <div class="rowposter   mt-3 p-2">
+        <ng-container *ngFor="let t of movieGenreResults">
+          <img src="https://image.tmdb.org/t/p/original/{{ t.posterPath }}"
+               class="rowimg largeposter" alt="{{ t.movieName }}" [routerLink]="['/movie', t.tmbdId]">
+        </ng-container>
+      </div>
+    </div>
+
+  </div>
+</div>
